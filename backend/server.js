@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import crypto from 'crypto'
 import cors from 'cors'
 import mysql from 'mysql'
+import cookieParser from "cookie-parser"
 
 const app = express()
 const PORT = 7000
