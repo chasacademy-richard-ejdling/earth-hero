@@ -5,6 +5,7 @@ import Root from './Root.jsx'
 import Home from './Home.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Provider } from 'hooks-for-redux'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
