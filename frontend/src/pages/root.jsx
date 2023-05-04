@@ -5,11 +5,14 @@ import { HiMenu } from "react-icons/hi"
 
 // Fixa färger och logga!!
 
+// bg-color #9feea2
+// button color #70c3ff
+
 export default function Root() {
     const isLoggedIn = useIsLoggedIn()
 
     return (
-        <div className="h-screen bg-gradient-to-tl from-sky-950 via-violet-900 to-blue-950 text-white">
+        <div className="h-screen flex flex-col bg-EHGreen"> {/* bg-gradient-to-tl from-sky-950 via-violet-900 to-blue-950 */}
             <header className="flex justify-between">
                 <Link to={"/"} className="m-2">Earth Hero</Link>
                 <nav className="flex items-center">
@@ -19,7 +22,7 @@ export default function Root() {
                     {isLoggedIn && <button className="m-2"><HiMenu size={'24px'}/></button>}
                 </nav>
             </header>
-            <main className="">
+            <main className="grow">
                 <Outlet />
             </main>
             <footer>

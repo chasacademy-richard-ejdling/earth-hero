@@ -1,5 +1,5 @@
 import sweden from "../assets/sweden.png"
-import earth from "../assets/Earth-Transparent.png"
+import logo from "../assets/logo.svg"
 import { setIsLoggedIn, useIsLoggedIn } from "../redux/isLoggedIn"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -19,8 +19,8 @@ export default function Login() {
 
     return (
         <div className="flex flex-col items-center">
-            <img className="w-3/4 self-center object-contain max-w-lg" src={earth} alt="" />
-            <div className="flex flex-col gap-2 w-3/4">
+            <img className="w-3/4 self-center object-contain max-w-lg mt-8" src={logo} alt="" />
+            <div className="flex flex-col gap-2 w-3/4 mt-8">
                 <div>
                     <label htmlFor="username">Användarnamn:</label>
                     <br />
