@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
-import sweden from "../assets/sweden.png"
+import sweden from "../assets/sweden.png";
 import { useIsLoggedIn } from "../redux/isLoggedIn";
-import { HiMenu } from "react-icons/hi"
+import { HiMenu } from "react-icons/hi";
 
 // Fixa färger och logga!!
 
@@ -9,7 +9,7 @@ import { HiMenu } from "react-icons/hi"
 // button color #70c3ff
 
 export default function Root() {
-    const isLoggedIn = useIsLoggedIn()
+  const isLoggedIn = useIsLoggedIn();
 
     return (
         <div className="h-screen flex flex-col bg-EHGreen"> {/* bg-gradient-to-tl from-sky-950 via-violet-900 to-blue-950 */}

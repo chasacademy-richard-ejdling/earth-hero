@@ -5,17 +5,12 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function Login() {
-    const loggedIn = useIsLoggedIn()
-    
-    const navigate = useNavigate()
+  const loggedIn = useIsLoggedIn();
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+  const navigate = useNavigate();
 
-    function handleLogin() {
-        setIsLoggedIn(true)
-        navigate("/user")
-    }
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
     return (
         <div className="flex flex-col items-center">
@@ -35,5 +30,17 @@ export default function Login() {
                 <button disabled={!username || !password} onClick={handleLogin} className="self-end bg-gray-200 enabled:hover:bg-gray-300 disabled:opacity-70 text-black rounded-full px-3 py-1 w-fit">Logga in</button>
             </div>
         </div>
-    )
+        <a href="" className="underline">
+          Glömt lösenord?
+        </a>
+        <button
+          disabled={!username || !password}
+          onClick={handleLogin}
+          className="self-end bg-gray-200 enabled:hover:bg-gray-300 disabled:opacity-70 text-black rounded-full px-3 py-1 w-fit"
+        >
+          Logga in
+        </button>
+      </div>
+    </div>
+  );
 }

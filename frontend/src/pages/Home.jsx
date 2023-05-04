@@ -5,10 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const isLoggedIn = useIsLoggedIn()
-    console.log("isLoggedIn: ", isLoggedIn)
+    const isLoggedIn = useIsLoggedIn();
+    console.log("isLoggedIn: ", isLoggedIn);
 
     useEffect(() => {
         isLoggedIn && navigate("/user")
