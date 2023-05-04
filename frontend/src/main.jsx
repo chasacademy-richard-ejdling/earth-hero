@@ -1,14 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 /* import App from './App.jsx' */
-import Root from './pages/Root.jsx'
-import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
-import Register from './pages/Register.jsx'
-import User from './pages/User.jsx'
-import './index.css'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { Provider } from 'hooks-for-redux'
+
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "hooks-for-redux";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import User from "./pages/User";
+import Root from "./pages/root";
 
 const router = createBrowserRouter([
   {
@@ -17,28 +18,28 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/register",
-        element: <Register />
+        element: <Register />,
       },
       {
         path: "/login",
-        element: <Login />
+        element: <Login />,
       },
       {
         path: "/user",
-        element: <User />
-      }
-    ]
-  }
-])
+        element: <User />,
+      },
+    ],
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
