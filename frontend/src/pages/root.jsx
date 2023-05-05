@@ -3,8 +3,6 @@ import sweden from "../assets/sweden.png";
 import { useIsLoggedIn } from "../redux/isLoggedIn";
 import { HiMenu } from "react-icons/hi";
 
-// Fixa färger och logga!!
-
 // bg-color #9feea2
 // button color #70c3ff
 

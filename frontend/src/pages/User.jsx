@@ -1,6 +1,14 @@
+import { useEffect } from "react"
 import Button from "../components/button"
+import { useNavigate } from "react-router-dom"
+import { useIsLoggedIn } from "../redux/isLoggedIn"
 
 export default function User() {
+    const navigate = useNavigate()
+    const isLoggedIn = useIsLoggedIn()
+    useEffect(() => {
+        !isLoggedIn && navigate("/")
+    }, [])
 
     return (
         <div className="">
