@@ -19,7 +19,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center">
-      <img className="w-3/4 self-center object-contain max-w-lg mt-8" src={logo} alt="" />
+      <img className="w-3/4 self-center object-contain max-w-lg mt-8" src={logo} alt="Earth Hero Logo" />
       <div className="flex flex-col gap-2 w-3/4 mt-8">
         <div>
           <label htmlFor="username">Användarnamn:</label>
