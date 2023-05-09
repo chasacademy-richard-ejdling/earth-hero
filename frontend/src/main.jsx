@@ -9,6 +9,10 @@ import User from "./pages/User.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "hooks-for-redux";
+import Team from "./pages/team/Team.jsx";
+import CreateTeam from "./pages/team/createTeam.jsx";
+import JoinTeam from "./pages/team/joinTeam.jsx";
+import TeamInfo from "./pages/team/teamInfo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +34,22 @@ const router = createBrowserRouter([
       {
         path: "/user",
         element: <User />,
+      },
+      {
+        path: "/user/team",
+        element: <Team />
+      },
+      {
+        path: "/user/team/create",
+        element: <CreateTeam />
+      },
+      {
+        path: "/user/team/join",
+        element: <JoinTeam />
+      },
+      {
+        path: "/user/team/info",
+        element: <TeamInfo />
       },
     ],
   },

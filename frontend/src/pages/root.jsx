@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import sweden from "../assets/sweden.png";
+import textLogo from "../assets/Earth-Hero-Text.svg"
 import { useIsLoggedIn } from "../redux/isLoggedIn";
 import { HiMenu } from "react-icons/hi";
 
@@ -11,10 +12,10 @@ export default function Root() {
 
     return (
         <div className="h-screen flex flex-col bg-EHGreen"> {/* bg-gradient-to-tl from-sky-950 via-violet-900 to-blue-950 */}
-            <header className="flex justify-between">
-                <Link to={"/"} className="m-2">Earth Hero</Link>
+            <header className="flex justify-between items-center">
+                <Link to={"/"} className="m-2 w-20"><img src={textLogo} alt="Earth Hero Text Logo" /></Link>
                 <nav className="flex items-center">
-                    <button className="h-8 w-8 p-0 self-end m-1 border border-transparent hover:border-white rounded-full overflow-hidden">
+                    <button className="h-8 w-8 p-0 self-end m-1 hover:brightness-95 active:brightness-[0.85] rounded-full overflow-hidden">
                         <img className="h-full w-full object-cover" src={sweden} alt="Swedish flag" />
                     </button>
                     {isLoggedIn && <button className="m-2"><HiMenu size={'24px'}/></button>}
