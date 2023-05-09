@@ -2,14 +2,15 @@
 const styles = {
 
     color: {
-       primary: "bg-pink-500 hover:bg-pink-300",
-       secondary: "bg-blue-500 hover:bg-blue-300",
+       primary: "bg-sky-300",
+       secondary: "bg-sky-400"
+       
        
     },
 
     size: {
-        small: "text-sm px-4 py-2",
-        large: "text-lg px-8 py-2",
+        small: "text-md px-4 py-2 rounded-full",
+        large: "text-lg px-8 py-2 rounded-full"
     },
 
     disabled: "bg-gray-500 cursor-not-allowed",
@@ -27,6 +28,6 @@ export default function Button(props) {
 
     return (<button 
     disabled={disabled}
-    className= {`rounded-lg ${colorClass} ${sizeClass} ${disabledClass}`}>{title}</button>
+    className= {` ${colorClass} ${sizeClass} ${disabledClass}`}>{title}</button>
     );
 }
