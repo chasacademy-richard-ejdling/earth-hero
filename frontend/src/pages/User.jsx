@@ -11,10 +11,10 @@ export default function User() {
     }, [])
 
     return (
-        <div className="">
-            <h1>Välkommen!</h1>
-            <Button title={'Test'} color={'primary'} size={'small'} />
-            <Button title={'Test'} color={'secondary'} size={'large'} />
+        <div className="flex flex gap-4">
+            <h1>Välkommen!</h1><br />
+            <Button  title={'Test'} color={'primary'} size={'large'} />
+            <Button title={'Test'} color={'primary'} size={'large'} />
             <Link to={"team"}>Team</Link>
         </div>
     )
