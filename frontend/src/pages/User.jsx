@@ -11,7 +11,7 @@ export default function User() {
     }, [])
 
     return (
-        <div className="flex flex gap-4">
+        <div className="flex gap-4">
             <h1>Välkommen!</h1><br />
             <Button  title={'Test'} color={'primary'} size={'large'} />
             <Button title={'Test'} color={'primary'} size={'large'} />
