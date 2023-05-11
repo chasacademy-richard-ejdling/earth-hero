@@ -14,6 +14,7 @@ import Team from "./pages/team/Team.jsx";
 import CreateTeam from "./pages/team/createTeam.jsx";
 import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
+import Junks from "./pages/Junks.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,23 +39,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/user/team",
-        element: <Team />
+        element: <Team />,
       },
       {
         path: "/user/team/create",
-        element: <CreateTeam />
+        element: <CreateTeam />,
       },
       {
         path: "/user/team/join",
-        element: <JoinTeam />
+        element: <JoinTeam />,
       },
       {
         path: "/user/team/info",
-        element: <TeamInfo />
+        element: <TeamInfo />,
       },
       {
         path: "/user/points",
-        element: <Points />
+        element: <Points />,
+      },
+      {
+        path: "/user/junks",
+        element: <Junks />,
       },
     ],
   },
