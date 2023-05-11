@@ -11,7 +11,7 @@ test_environment:
   stage: test
   image: node:14-alpine
   script:
-    - apt update
+    - apk update
 
 build_image:
   image: docker:20.10.16
@@ -24,12 +24,3 @@ build_image:
   script:
     - docker build -t $IMAGE_NAME:$IMAGE_TAG .
     - docker push $IMAGE_NAME:$IMAGE_TAG
-
-
-# deploy:
-#   stage: deploy
-#   image: alpine
-#   before_script:
-#     - apk add --no-cache openssh-client
-#   script:
-#     - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no root@<your-linode-server-ip> "docker login -u <your-docker-registry-username> -p <your-docker-registry-password> && docker pull my-docker-registry.com/my-image && docker run -d -p 80:80 my-docker-registry.com/my-image"
