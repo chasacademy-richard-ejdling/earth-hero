@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import sweden from "../assets/sweden.png";
 import textLogo from "../assets/Earth-Hero-Text.svg"
 import { useIsLoggedIn } from "../redux/isLoggedIn";
+import NavBar from "./navbar";
 import { HiMenu } from "react-icons/hi";
 
 // bg-color #9feea2
@@ -18,14 +19,16 @@ export default function Root() {
                     <button className="h-8 w-8 p-0 self-end m-1 hover:brightness-95 active:brightness-[0.85] rounded-full overflow-hidden">
                         <img className="h-full w-full object-cover" src={sweden} alt="Swedish flag" />
                     </button>
-                    {isLoggedIn && <button className="m-2"><HiMenu size={'24px'}/></button>}
+                    {isLoggedIn && <button className="m-2"> </button>
+                    } 
                 </nav>
+                
             </header>
             <main className="grow">
                 <Outlet />
             </main>
             <footer>
-
+            <NavBar />
             </footer>
         </div>
     )
