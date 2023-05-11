@@ -9,7 +9,7 @@ stages:
 
 test_environment:
   stage: test
-  image: node:14-alpine
+  image: node:20-alpine
   script:
     - apk update
 
