@@ -1,6 +1,6 @@
 variables:
   IMAGE_NAME: airrloww/greenjetz
-  IMAGE_TAG: earth-hero-app
+  IMAGE_TAG: earth-hero-apps
 # airrloww/greenjetz:earth-hero-app=1.0
 stages:
   - test
