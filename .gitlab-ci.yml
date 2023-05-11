@@ -1,6 +1,6 @@
 variables:
   IMAGE_NAME: airrloww/greenjetz
-  IMAGE_TAG: earth-hero-app=1.0
+  IMAGE_TAG: earth-hero-app
 # airrloww/greenjetz:earth-hero-app=1.0
 stages:
   - test
@@ -23,6 +23,6 @@ build_image:
   before_script:
     - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
   script:
-    - docker build -t airrloww/greenjetz:earth-hero-app=1.0 .
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
     - docker push airrloww/greenjetz:earth-hero-app=1.0
 
