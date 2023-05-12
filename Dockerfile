@@ -1,10 +1,10 @@
-FROM node:20-alpine AS build-stage
+FROM node:18.16-alpine AS build-stage
 WORKDIR /app
 
 COPY frontend/package*.json ./
 RUN npm install
 
-COPY frontend frontend
+COPY frontend frontend/
 RUN npm run build
 
 FROM nginx:1.21
