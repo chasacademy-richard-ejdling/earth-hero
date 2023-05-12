@@ -16,6 +16,7 @@ import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
 import InfoPoints from "./pages/InfoPoints.jsx";
 import TeamHome from "./pages/team/TeamHome.jsx";
+import TeamPoints from "./pages/TeamPoints.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/user/team/:teamName",
         element: <TeamHome />,
+      },
+      {
+        path: "/user/team/:teamName/points",
+        element: <TeamPoints />,
       },
       {
         path: "/user/points",
