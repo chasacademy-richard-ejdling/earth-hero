@@ -3,15 +3,8 @@ variables:
   IMAGE_TAG: earth-hero-app
 
 stages:
-  - test
   - build
   # - deploy
-
-test_environment:
-  stage: test
-  image: node:18.16-alpine
-  script:
-    - apk update
 
 build_image:
   stage: build

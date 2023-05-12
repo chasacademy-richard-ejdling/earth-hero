@@ -17,6 +17,7 @@ RUN npm install
 
 COPY backend .
 
+# Final build stage
 FROM node:18.16-alpine AS final
 WORKDIR /app
 COPY --from=frontend-build /app/frontend/dist/ ./frontend/
