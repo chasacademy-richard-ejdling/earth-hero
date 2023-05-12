@@ -13,8 +13,10 @@ export default function User() {
     return (
         <div className="flex gap-4">
             <h1>Välkommen!</h1><br />
-            <Button  title={'Test'} color={'primary'} size={'large'} />
-            <Button title={'Test'} color={'primary'} size={'large'} />
+            <Button  title={'Test'} color={'primary'} size={'small'} />
+            <Button title={'SKICKA EN NY LÄNK'} color={'third'} size={'large'} />
+            <Button  title={'Heropoäng'} color={'primary'} size={'square1'} icon={"letterh"} />
+            <Button title={'Mitt konto'} color={'third'} size={'square2'} icon={'profile'} />
             <Link to={"team-start"}>Team</Link>
         </div>
     )
