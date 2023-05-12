@@ -5,8 +5,8 @@ WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm install
 
-COPY frontend frontend
-RUN cd frontend && npm run build
+COPY frontend .
+RUN npm run build
 
 # Build stage for backend
 FROM node:18.16-alpine AS backend-build
