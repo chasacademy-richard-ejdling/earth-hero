@@ -1,5 +1,6 @@
-FROM node:18.16-alpine AS build-stage
-WORKDIR /app
+# Build stage for frontend
+FROM node:18.16-alpine AS frontend-build
+WORKDIR /app/frontend
 
 COPY frontend/package*.json ./
 RUN npm install
@@ -7,5 +8,20 @@ RUN npm install
 COPY frontend .
 RUN npm run build
 
-FROM nginx:1.21
-COPY --from=build-stage /app/build/ /usr/share/nginx/html/
+# Build stage for backend
+FROM node:18.16-alpine AS backend-build
+WORKDIR /app/backend
+
+COPY backend/package*.json ./
+RUN npm install
+
+COPY backend .
+RUN npm start
+
+FROM node:18.16-alpine AS final
+WORKDIR /app
+COPY --from=frontend-build /app/frontend/build/ ./frontend/
+COPY --from=backend-build /app/backend/ ./backend/
+WORKDIR /app/backend
+EXPOSE 3000
+CMD ["npm", "start"]
