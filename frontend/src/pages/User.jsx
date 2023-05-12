@@ -15,7 +15,7 @@ export default function User() {
             <h1>Välkommen!</h1><br />
             <Button  title={'Test'} color={'primary'} size={'large'} />
             <Button title={'Test'} color={'primary'} size={'large'} />
-            <Link to={"team"}>Team</Link>
+            <Link to={"team-start"}>Team</Link>
         </div>
     )
 }

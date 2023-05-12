@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { RiTeamFill } from "react-icons/ri"
 
-export default function Team() {
+export default function TeamStart() {
 
     return (
         <div className="flex flex-col items-center w-3/4 m-auto">
