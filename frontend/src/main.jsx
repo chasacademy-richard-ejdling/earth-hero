@@ -10,7 +10,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "hooks-for-redux";
 import Team from "./pages/team/Team.jsx";
-import CreateTeam from "./pages/team/createTeam.jsx";
+import CreateTeam from "./pages/team/CreateTeam.jsx";
 import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
 
