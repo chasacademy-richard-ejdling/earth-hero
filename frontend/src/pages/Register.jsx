@@ -38,7 +38,7 @@ export default function Register() {
                 </label>
                 <button disabled={!username || !email || !password || !policyChecked} className="self-end bg-gray-200 enabled:hover:bg-gray-300 disabled:opacity-70 text-black rounded-full px-3 py-1 w-fit">Registra dig</button>
             </div>
-            <Modal state={readingPolicy} setState={setReadingPolicy} children={(
+            <Modal state={readingPolicy} setState={setReadingPolicy}>
                 <div className='flex flex-col w-3/4 m-auto h-fit bg-sky-300 p-4 rounded-lg max-h-[75%] overflow-scroll'>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aut quasi aliquam consequatur earum nulla suscipit maiores vitae nostrum minima eveniet aperiam, mollitia quisquam molestias deserunt eaque maxime numquam exercitationem.
@@ -46,7 +46,7 @@ export default function Register() {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod molestias ad temporibus aliquid beatae ducimus dolores velit. Inventore officiis, est, beatae velit rem consequatur, labore iure aperiam aliquid aut magni?
                     </p>
                 </div>
-            )} />
+            </Modal>
         </div>
     );
 }
