@@ -7,6 +7,8 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import User from "./pages/User.jsx";
 import Points from "./pages/Points.jsx";
+import Settings from "./pages/Settings.jsx";
+import Help from "./pages/Help.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "hooks-for-redux";
@@ -70,6 +72,14 @@ const router = createBrowserRouter([
       {
         path: "/user/info-points",
         element: <InfoPoints />,
+      },
+      {
+        path: "/user/settings",
+        element: <Settings />,
+      },
+      {
+        path: "/user/settings/help",
+        element: <Help />,
       },
     ],
   },
