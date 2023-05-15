@@ -18,7 +18,7 @@ const Settings = () => {
       <h1 className="text-3xl font-bold mb-8">Inställningar</h1>
       <div className="flex flex-col items-center w-3/5 flex-grow">
         <div className="w-full">
-          <Link to="/page1">
+          <Link to="/user/settings/info">
             <button
               className={`${
                 activeButtons.includes('page1') ? 'bg-green-300 text-white transform scale-105' : 'bg-gray-100'
