@@ -10,10 +10,13 @@ import Points from "./pages/Points.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "hooks-for-redux";
-import Team from "./pages/team/Team.jsx";
+import TeamStart from "./pages/team/TeamStart.jsx";
 import CreateTeam from "./pages/team/createTeam.jsx";
 import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
+import InfoPoints from "./pages/InfoPoints.jsx";
+import TeamHome from "./pages/team/TeamHome.jsx";
+import TeamPoints from "./pages/TeamPoints.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,24 +40,36 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-        path: "/user/team",
-        element: <Team />
+        path: "/user/team-start",
+        element: <TeamStart />,
       },
       {
-        path: "/user/team/create",
-        element: <CreateTeam />
+        path: "/user/team-start/create",
+        element: <CreateTeam />,
       },
       {
-        path: "/user/team/join",
-        element: <JoinTeam />
+        path: "/user/team-start/join",
+        element: <JoinTeam />,
       },
       {
-        path: "/user/team/info",
-        element: <TeamInfo />
+        path: "/user/team-start/info",
+        element: <TeamInfo />,
+      },
+      {
+        path: "/user/team/:teamName",
+        element: <TeamHome />,
+      },
+      {
+        path: "/user/team/:teamName/points",
+        element: <TeamPoints />,
       },
       {
         path: "/user/points",
-        element: <Points />
+        element: <Points />,
+      },
+      {
+        path: "/user/info-points",
+        element: <InfoPoints />,
       },
     ],
   },
