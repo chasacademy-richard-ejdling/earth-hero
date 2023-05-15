@@ -14,7 +14,7 @@ import Team from "./pages/team/Team.jsx";
 import CreateTeam from "./pages/team/createTeam.jsx";
 import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
-import Junks from "./pages/Junks.jsx";
+import Junks from "./pages/junks.jsx";
 
 const router = createBrowserRouter([
   {
