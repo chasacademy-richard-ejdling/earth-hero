@@ -17,7 +17,7 @@ const Help = () => {
           Inställningar
         </Link>
       </h1>
-      <div className="flex flex-col items-center w-3/5 flex-grow">
+      <div className="flex flex-col items-center w-5/6 flex-grow"> {/* Updated width to w-5/6 */}
         <div className="w-full">
           <div className="text-center mb-4">
             <p className="text-lg font-bold mb-2">Hjälp</p>
