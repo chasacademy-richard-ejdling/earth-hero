@@ -11,7 +11,7 @@ export default function User() {
     }, [])
 
     return (
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-col items-center">
             <h1>Välkommen!</h1><br />
             <Button  title={'Test'} color={'primary'} size={'small'} />
             <Button title={'SKICKA EN NY LÄNK'} color={'third'} size={'large'} />
