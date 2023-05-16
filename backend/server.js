@@ -23,6 +23,12 @@ const db = mysql.createConnection({
   database: process.env.DB,
 });
 
+const tokenSecret = process.env.TOKEN_SECRET
+
+function generateAccessToken(userId) {
+  return jwt.sign(userId, tokenSecret, { expiresIn: 1800 })
+}
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -39,7 +45,58 @@ app.post("/register", (req, res) => {
             res.send('ok')
         }
         }
-    )});
+    )}
+);
+
+app.post('/login', (req, res) => {
+  console.log(req.body)
+
+  const { username, password } = req.body
+
+  db.query("SELECT id, username, password FROM users", (err, results) => {
+      if (err) {
+          res.sendStatus(500)
+      } else {
+          let userId
+
+          console.log('sessions result', results)
+
+          results.forEach(user => {
+              if (username == user.username && password == user.password) {
+                  userId = user.id
+                  return
+              }
+          })
+
+          if (!userId) {
+              res.status(401).send('Wrong username or password')
+          } else {
+              console.log(userId)
+              const token = generateAccessToken({ userId: userId })
+
+              res.send(token)
+          }
+
+
+          /* res.send('ok') */
+      }
+  })
+
+  /* let userId = ''
+
+  users.forEach(user => {
+      if (username == user.username && password == user.password) {
+          userId = user.id
+          return
+      }
+  })
+
+  if (!userId) res.status(401).send('Wrong username or password')
+
+  const token = generateAccessToken({ userId: userId })
+
+  res.send(token) */
+})
 
 
 app.listen(PORT, () => {
