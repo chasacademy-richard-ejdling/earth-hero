@@ -20,6 +20,7 @@ import TeamInfo from "./pages/team/teamInfo.jsx";
 import InfoPoints from "./pages/InfoPoints.jsx";
 import TeamHome from "./pages/team/TeamHome.jsx";
 import TeamPoints from "./pages/TeamPoints.jsx";
+import InfoSite from "./pages/InfoSite.jsx";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
         path: "/user/settings/info",
         element: <Info />,
       },
+      {
+        path: "/user/settings/infosite",
+        element: <InfoSite />,
+      }
     ],
   },
 ]);
