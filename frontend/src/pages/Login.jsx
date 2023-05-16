@@ -3,7 +3,6 @@ import logo from "../assets/logo.svg";
 import { setIsLoggedIn, useIsLoggedIn } from "../redux/isLoggedIn";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import glas from "../assets/glas.svg";
 
 export default function Login() {
   const loggedIn = useIsLoggedIn();
@@ -46,7 +45,7 @@ export default function Login() {
             type="text"
           />
         </div>
-        <img src={glas} alt="" />
+
         <a href="" className="underline">
           Glömt lösenord?
         </a>
