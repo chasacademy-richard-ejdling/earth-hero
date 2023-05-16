@@ -34,7 +34,7 @@ function Junks() {
           alt=""
         />
       </div>
-      <div className="grid grid-cols-4 gap-10 place-content-center ">
+      <div className="grid grid-cols-4 gap-10 place-content-center justify-center ">
         {imgUrl.map((src, i) => (
           <React.Fragment key={i}>
             <img draggable="true" id={i} src={src} alt="" />
