@@ -7,6 +7,7 @@ import hamburgermeny from "../assets/hamburgermeny.svg";
 export default function NavBar() {
   return (
     <>
+
       <nav className="bg-blue-900  mt-24 w-full h-16 fixed bottom-0 left-0  flex flex-row text-center rounded-t-2xl">
         <div className=" flex w-full justify-between items-center m-4 p-4 ">
           <button className="">
@@ -33,6 +34,7 @@ export default function NavBar() {
             />
           </button>
         </div>
+
       </nav>
     </>
   );

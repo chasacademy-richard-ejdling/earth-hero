@@ -7,6 +7,9 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import User from "./pages/User.jsx";
 import Points from "./pages/Points.jsx";
+import Settings from "./pages/Settings.jsx";
+import Help from "./pages/Help.jsx";
+import Info from "./pages/Info.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "hooks-for-redux";
@@ -16,6 +19,8 @@ import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
 import InfoPoints from "./pages/InfoPoints.jsx";
 import TeamHome from "./pages/team/TeamHome.jsx";
+import TeamPoints from "./pages/TeamPoints.jsx";
+import InfoSite from "./pages/InfoSite.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +64,10 @@ const router = createBrowserRouter([
         element: <TeamHome />,
       },
       {
+        path: "/user/team/:teamName/points",
+        element: <TeamPoints />,
+      },
+      {
         path: "/user/points",
         element: <Points />,
       },
@@ -66,6 +75,22 @@ const router = createBrowserRouter([
         path: "/user/info-points",
         element: <InfoPoints />,
       },
+      {
+        path: "/user/settings",
+        element: <Settings />,
+      },
+      {
+        path: "/user/settings/help",
+        element: <Help />,
+      },
+      {
+        path: "/user/settings/info",
+        element: <Info />,
+      },
+      {
+        path: "/user/settings/infosite",
+        element: <InfoSite />,
+      }
     ],
   },
 ]);
