@@ -1,13 +1,13 @@
 import Trash from "../assets/Trash.svg";
 
-export default function TrashCards({ type, color, poäng }) {
+export default function TrashCards({ type, color, points }) {
   return (
-    <div className=" flex flex-col items-center p-6 border-4 border-gray-300  rounded-lg  ">
+    <div className=" flex flex-col bg-white  items-center p-6 border-4 border-gray-300  rounded-lg ">
       <h1 className=" text-base font-light mb-4">{type}</h1>
       <svg
         className={color}
-        width="77"
-        height="88"
+        width="70"
+        height="85"
         viewBox="0 0 77 88"
         fill="current"
         xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ export default function TrashCards({ type, color, poäng }) {
         />
       </svg>
 
-      <p className=" text-lg font-light mt-2">{poäng} poäng</p>
+      <p className=" text-lg font-light mt-2">{points} points</p>
     </div>
   );
 }
