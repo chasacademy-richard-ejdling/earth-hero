@@ -23,10 +23,10 @@ const db = mysql.createConnection({
   database: process.env.DB,
 });
 
-const tokenSecret = process.env.TOKEN_SECRET
+const tokenSecret = process.env.TOKEN_SECRET;
 
 function generateAccessToken(userId) {
-  return jwt.sign(userId, tokenSecret, { expiresIn: 1800 })
+  return jwt.sign(userId, tokenSecret, { expiresIn: 1800 });
 }
 
 app.get("/", (req, res) => {
@@ -34,53 +34,54 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-    const { username, password, email } = req.body
+  const { username, password, email } = req.body;
 
-    db.query("INSERT INTO users (username, password, email) VALUES (?, ?, ?)", 
-        [username, password, email], (err, results) => {
-        console.log('result register', results)
-        if (err) {
-            res.sendStatus(500)
-        } else {
-            res.send('ok')
-        }
-        }
-    )}
-);
+  db.query(
+    "INSERT INTO users (username, password, email) VALUES (?, ?, ?)",
+    [username, password, email],
+    (err, results) => {
+      console.log("result register", results);
+      if (err) {
+        res.sendStatus(500);
+      } else {
+        res.send("ok");
+      }
+    }
+  );
+});
 
-app.post('/login', (req, res) => {
-  console.log(req.body)
+app.post("/login", (req, res) => {
+  console.log(req.body);
 
-  const { username, password } = req.body
+  const { username, password } = req.body;
 
   db.query("SELECT id, username, password FROM users", (err, results) => {
-      if (err) {
-          res.sendStatus(500)
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      let userId;
+
+      console.log("sessions result", results);
+
+      results.forEach((user) => {
+        if (username == user.username && password == user.password) {
+          userId = user.id;
+          return;
+        }
+      });
+
+      if (!userId) {
+        res.status(401).send("Wrong username or password");
       } else {
-          let userId
+        console.log(userId);
+        const token = generateAccessToken({ userId: userId });
 
-          console.log('sessions result', results)
-
-          results.forEach(user => {
-              if (username == user.username && password == user.password) {
-                  userId = user.id
-                  return
-              }
-          })
-
-          if (!userId) {
-              res.status(401).send('Wrong username or password')
-          } else {
-              console.log(userId)
-              const token = generateAccessToken({ userId: userId })
-
-              res.send(token)
-          }
-
-
-          /* res.send('ok') */
+        res.send(token);
       }
-  })
+
+      /* res.send('ok') */
+    }
+  });
 
   /* let userId = ''
 
@@ -96,8 +97,7 @@ app.post('/login', (req, res) => {
   const token = generateAccessToken({ userId: userId })
 
   res.send(token) */
-})
-
+});
 
 app.listen(PORT, () => {
   console.log("Server is running on port " + PORT);
