@@ -18,11 +18,9 @@ COPY frontend .
 RUN npm run build
 
 # Final build stage
-FROM node:18.16-alpine AS final
-WORKDIR /app
-COPY /app/frontend/dist/* /var/www/earth-hero/
-CMD ["ls", "/var/www/earth-hero"]
-# COPY --from=backend-build /app/backend/ ./backend/
-# WORKDIR /app/frontend
-# EXPOSE 7000
-# CMD ["npm", "run", "dev"]
+FROM nginx:1.21-alpine AS final
+RUN rm -rf /etc/nginx/conf.d/*
+COPY --from=frontend-build /app/frontend/dist/ /usr/share/nginx/html
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
