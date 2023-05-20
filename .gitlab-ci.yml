@@ -9,8 +9,8 @@ build_image:
     - docker:20.10.16-dind
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
-  tags:
-    - hero
+  # tags:
+  #   - hero
   before_script:
     - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
   script:
