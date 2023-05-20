@@ -10,8 +10,6 @@ build_image:
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
   tags:
-    - ubuntu
-    - server
     - hero
   before_script:
     - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
