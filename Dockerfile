@@ -1,4 +1,4 @@
-# Build stage for backend
+# Build stage for backend [[I DON'T EVEN KNOW WHY]]
 FROM node:18.16-alpine AS backend-build
 WORKDIR /app/backend
 
@@ -19,8 +19,6 @@ RUN npm run build
 
 # Final build stage
 FROM nginx:1.21-alpine AS final
-RUN rm -rf /etc/nginx/conf.d/*
 COPY --from=frontend-build /app/frontend/dist/ /usr/share/nginx/html
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8000
 CMD ["nginx", "-g", "daemon off;"]
