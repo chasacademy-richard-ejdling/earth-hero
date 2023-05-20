@@ -7,8 +7,6 @@ build_image:
   image: docker:20.10.16
   services:
     - docker:20.10.16-dind
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
   tags:
