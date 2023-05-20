@@ -20,7 +20,7 @@ RUN npm run build
 # Final build stage
 FROM node:18.16-alpine AS final
 WORKDIR /app
-COPY --from=frontend-build /app/frontend/dist/* /var/www/earth-hero/
+COPY /app/frontend/dist/* /var/www/earth-hero/
 CMD ["ls", "/var/www/earth-hero"]
 # COPY --from=backend-build /app/backend/ ./backend/
 # WORKDIR /app/frontend
