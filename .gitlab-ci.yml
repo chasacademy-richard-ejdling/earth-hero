@@ -16,5 +16,6 @@ build_image:
   script:
     - docker build -t $IMAGE_NAME:$IMAGE_TAG .
     - docker push $IMAGE_NAME:$IMAGE_TAG
-    - cat /etc/passwd/
+    - cat /etc/passwd
+    - docker ps -a 
 
