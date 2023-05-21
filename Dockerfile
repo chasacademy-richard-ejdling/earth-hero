@@ -18,7 +18,10 @@ COPY frontend .
 RUN npm run build
 
 # Final build stage
-FROM nginx:1.21-alpine AS final
-COPY --from=frontend-build /app/frontend/dist/ /usr/share/nginx/html
+FROM node:18.16-alpine AS final
+COPY --from=frontend-build /app/frontend/dist/ /app/public
+WORKDIR /app/backend
+COPY --from=backend-build /app/backend .
+
 EXPOSE 8000
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "index.js"]
