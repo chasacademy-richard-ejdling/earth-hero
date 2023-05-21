@@ -1,4 +1,4 @@
-# Build stage for backend [[I DON'T EVEN KNOW WHY]]
+# Build stage for backend
 FROM node:18.16-alpine AS backend-build
 WORKDIR /app/backend
 
@@ -18,10 +18,8 @@ COPY frontend .
 RUN npm run build
 
 # Final build stage
-FROM node:18.16-alpine AS final
-COPY --from=frontend-build /app/frontend/dist/ /app/public
-WORKDIR /app/backend
-COPY --from=backend-build /app/backend .
+FROM httpd:2.4-alpine AS final
+COPY --from=frontend-build /app/frontend/dist/ /usr/local/apache2/htdocs/
+COPY --from=backend-build /app/backend /usr/local/apache2/cgi-bin/
 
-EXPOSE 8000
-CMD ["node", "index.js"]
+EXPOSE 80
