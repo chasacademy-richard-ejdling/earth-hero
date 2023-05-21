@@ -2,6 +2,10 @@ variables:
   IMAGE_NAME: airrloww/greenjetz
   IMAGE_TAG: earth-hero-app
 
+stages:
+  - build
+  - deploy
+
 build_image:
   stage: build
   image: docker:20.10.16
@@ -9,15 +13,18 @@ build_image:
     - docker:20.10.16-dind
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
-  # tags:
-  #   - hero
   before_script:
     - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
   script:
     - docker build -t $IMAGE_NAME:$IMAGE_TAG .
     - docker push $IMAGE_NAME:$IMAGE_TAG
-    - docker run -d -p 8000:8000 $IMAGE_NAME:$IMAGE_TAG
-    - nginx -t
-    - docker ps -a 
-    - service nginx restart
 
+deploy_app:
+  stage: deploy
+  before_script:
+    - chmod 400 $SSH_KEY
+  script: 
+    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ahmed@65.108.240.247 "
+        docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD &&
+        docker ps -aq | xargs docker stop | xargs docker rm &&
+        docker run -d -p 8000:8000 $IMAGE_NAME:$IMAGE_TAG"
