@@ -24,3 +24,4 @@ RUN echo "earth-hero.grinton.dev" >> /usr/local/apache2/conf/httpd.conf
 COPY --from=backend-build /app/backend /usr/local/apache2/cgi-bin/
 
 EXPOSE 80
+EXPOSE 443
