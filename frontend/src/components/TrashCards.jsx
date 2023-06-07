@@ -2,7 +2,7 @@ import Trash from "../assets/Trash.svg";
 
 export default function TrashCards({ type, color, points }) {
   return (
-    <div className=" flex flex-col bg-white  items-center p-6 border-4 border-gray-300  rounded-lg ">
+    <div className=" flex flex-col bg-white  items-center p-4 border-2 border-gray-200 rounded-lg m-auto">
       <h1 className=" text-base font-light mb-4">{type}</h1>
       <svg
         className={color}
