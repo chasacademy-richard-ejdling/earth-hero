@@ -27,7 +27,7 @@ export default function Modal({ state, setState, children }) {
         <div>
             {
                 state && (
-                    <div id='close' className='flex justify-end bg-white/70 fixed top-0 right-0 z-10 h-screen w-screen' onClick={(e) => e.target.id === 'close' && setState(false)}>
+                    <div id='close' className='flex justify-end backdrop-blur-[2px] backdrop-brightness-[0.7] fixed top-0 right-0 z-10 h-screen w-screen' onClick={(e) => e.target.id === 'close' && setState(false)}>
                         <button className='fixed top-0 right-0 h m-2' onClick={() => setState(false)}><img src={close} /></button>
                         {children}
                     </div>

@@ -1,7 +1,11 @@
 import sweden from "../assets/sweden.png";
 import logo from "../assets/logo.svg";
 import { setIsLoggedIn, useIsLoggedIn } from "../redux/isLoggedIn";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import { useState, useRef } from "react";
+>>>>>>> development
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -12,9 +16,47 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleLogin() {
+  const token = useRef('')
+
+  /* function handleLogin() {
     setIsLoggedIn(true);
     navigate("/user");
+  } */
+
+  function handleLogin() {
+<<<<<<< HEAD
+    setIsLoggedIn(true);
+    navigate("/user");
+=======
+    const user = {
+      username: username,
+      password: password,
+    }
+
+    fetch("http://localhost:7000/login", {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => {
+        console.log(res)
+        if (res.ok) {
+          setIsLoggedIn(true);
+          navigate("/user");
+          return res.text()
+        }
+        
+      }).then(data => {
+        console.log(data)
+        token.current = data
+        console.log('token', token.current)
+      })
+>>>>>>> development
   }
 
   return (
@@ -45,7 +87,10 @@ export default function Login() {
             type="text"
           />
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
         <a href="" className="underline">
           Glömt lösenord?
         </a>
