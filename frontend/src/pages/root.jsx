@@ -13,7 +13,7 @@ export default function Root() {
   const isLoggedIn = useIsLoggedIn();
 
     return (
-        <div className="h-screen flex flex-col bg-EHGreen"> {/* bg-gradient-to-tl from-sky-950 via-violet-900 to-blue-950 */}
+        <div className="flex flex-col"> {/* bg-gradient-to-tl from-sky-950 via-violet-900 to-blue-950 */}
             <header className="flex justify-between items-center">
                 <Link to={"/"} className="m-2 w-20"><img src={textLogo} alt="Earth Hero Text Logo" /></Link>
                 <nav className="flex items-center">
