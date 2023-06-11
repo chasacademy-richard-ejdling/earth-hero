@@ -18,10 +18,8 @@ COPY frontend .
 RUN npm run build
 
 # Final build stage
-FROM httpd:2.4-alpine AS final
+FROM caddy:latest AS final
 COPY --from=frontend-build /app/frontend/dist/ /usr/local/apache2/htdocs/
-RUN echo "earth-hero.grinton.dev" >> /usr/local/apache2/conf/httpd.conf
 COPY --from=backend-build /app/backend /usr/local/apache2/cgi-bin/
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443

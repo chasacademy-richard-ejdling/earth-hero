@@ -26,10 +26,5 @@ deploy_app:
   script: 
     - ssh -o StrictHostKeyChecking=no -i $SSH_KEY -p $PORT $SERVER_USER@$IP_ADDRESS "
         docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD &&
+        docker ps -aq | xargs docker stop | xargs docker rm &&
         docker run -d -p 80:80 -p 443:443 $IMAGE_NAME:$IMAGE_TAG "
-
-
-
-
-
-#         docker ps -aq | xargs docker stop | xargs docker rm &&
