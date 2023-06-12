@@ -12,7 +12,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const token = useRef('')
+  const token = useRef("");
 
   /* function handleLogin() {
     setIsLoggedIn(true);
@@ -23,7 +23,7 @@ export default function Login() {
     const user = {
       username: username,
       password: password,
-    }
+    };
 
     fetch("http://localhost:7000/login", {
       method: "POST",
@@ -36,18 +36,18 @@ export default function Login() {
       body: JSON.stringify(user),
     })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         if (res.ok) {
           setIsLoggedIn(true);
           navigate("/user");
-          return res.text()
+          return res.text();
         }
-        
-      }).then(data => {
-        console.log(data)
-        token.current = data
-        console.log('token', token.current)
       })
+      .then((data) => {
+        console.log(data);
+        token.current = data;
+        console.log("token", token.current);
+      });
   }
 
   return (
