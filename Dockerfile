@@ -22,4 +22,4 @@ FROM caddy:latest AS final
 COPY --from=frontend-build /app/frontend/dist/ /usr/local/apache2/htdocs/
 COPY --from=backend-build /app/backend /usr/local/apache2/cgi-bin/
 
-EXPOSE 80 443
+EXPOSE 8080 4343
