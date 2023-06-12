@@ -21,7 +21,9 @@ import InfoPoints from "./pages/InfoPoints.jsx";
 import TeamHome from "./pages/team/TeamHome.jsx";
 import TeamPoints from "./pages/TeamPoints.jsx";
 import InfoSite from "./pages/InfoSite.jsx";
+import HeroInfo from "./pages/HeroInfo.jsx";
 import Junks from "./pages/Junks.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -71,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/info-points",
         element: <InfoPoints />,
+      },
+      {
+        path: "/hero-info",
+        element: <HeroInfo />,
       },
       {
         path: "/settings",
