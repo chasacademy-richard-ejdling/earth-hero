@@ -59,11 +59,11 @@ const router = createBrowserRouter([
         element: <JoinTeam />,
       },
       {
-        path: "/team/:teamName",
+        path: "/team",
         element: <TeamHome />,
       },
       {
-        path: "/team/:teamName/points",
+        path: "/team/points",
         element: <TeamPoints />,
       },
       {
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
         element: <InfoSite />,
       },
       {
-        path: "/user/settings/junks",
+        path: "/junks",
         element: <Junks />,
       },
     ],

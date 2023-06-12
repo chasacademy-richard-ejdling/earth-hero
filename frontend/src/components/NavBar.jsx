@@ -5,6 +5,7 @@ import stars from "../assets/stars.svg";
 import hamburgermeny from "../assets/hamburgermeny.svg";
 import Modal from "./Modal";
 import TeamPoints from "../pages/TeamPoints";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
@@ -13,6 +14,7 @@ export default function NavBar() {
   const [openSettings, setOpenSettings] = useState(false)
   const [openPointInfo, setOpenPointInfo] = useState(false)
   const [openLogout, setOpenLogout] = useState(false)
+  const [startButton, setStartButton] = useState(false)
 
   return (
     <>
@@ -27,13 +29,25 @@ export default function NavBar() {
             />
           </button>
           <div>
-            <button className="object-contain h-36">
-              <img
-                className=" self-center object-contain relative -top-[1rem] w-16  md:h-32 m-auto "
-                src={startearth2}
-                alt=""
-              />
-            </button>
+            {startButton ? (
+              <Link className="object-contain relative -top-[1rem]" to={'/team'} onClick={() => setStartButton(!startButton)}>
+                <img
+                  className=" object-contain w-16 md:h-32 m-auto "
+                  src={startearth2}
+                  alt=""
+                />
+              </Link>
+            ) : (
+              (
+                <Link className="object-contain relative -top-[1rem]" to={'/junks'} onClick={() => setStartButton(!startButton)}>
+                  <img
+                    className=" object-contain w-16 md:h-32 m-auto "
+                    src={startearth2}
+                    alt=""
+                  />
+                </Link>
+              )
+            )}
           </div>
           <button onClick={() => setHamburgerOpen(true)}>
             <img
