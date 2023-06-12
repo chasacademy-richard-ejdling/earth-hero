@@ -3,14 +3,14 @@ import ProfileImg from "../../components/ProfileImg"
 
 export default function TeamHome() {
     const username = "Richard"
-    const teamName = "Office Tornadoes"
+    const teamName = "Name"
     const points = 1200
     return (
         <div className="flex flex-col items-center w-3/4 m-auto">
             <div className="bg-[#204E95] rounded-md m-4">
                 <h1 className="p-2 text-2xl font-semibold text-EHGreen">{teamName}</h1>
             </div>
-            <div className="flex flex-wrap justify-between gap-y-4">
+            <div className="flex flex-wrap justify-between gap-y-4 max-h-80 max-w-[214px]">
                 <ProfileImg img={profileImg} username={username} />
                 <ProfileImg img={profileImg} username={username} />
                 <ProfileImg img={profileImg} username={username} />

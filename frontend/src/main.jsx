@@ -45,51 +45,47 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-        path: "/user/team-start",
+        path: "/team-start",
         element: <TeamStart />,
       },
       {
-        path: "/user/team-start/create",
+        path: "/team-start/create",
         element: <CreateTeam />,
       },
       {
-        path: "/user/team-start/join",
+        path: "/team-start/join",
         element: <JoinTeam />,
       },
       {
-        path: "/user/team-start/info",
-        element: <TeamInfo />,
-      },
-      {
-        path: "/user/team/:teamName",
+        path: "/team/:teamName",
         element: <TeamHome />,
       },
       {
-        path: "/user/team/:teamName/points",
+        path: "/team/:teamName/points",
         element: <TeamPoints />,
       },
       {
-        path: "/user/points",
+        path: "/points",
         element: <Points />,
       },
       {
-        path: "/user/info-points",
+        path: "/info-points",
         element: <InfoPoints />,
       },
       {
-        path: "/user/settings",
+        path: "/settings",
         element: <Settings />,
       },
       {
-        path: "/user/settings/help",
+        path: "/settings/help",
         element: <Help />,
       },
       {
-        path: "/user/settings/info",
+        path: "/settings/info",
         element: <Info />,
       },
       {
-        path: "/user/settings/infosite",
+        path: "/settings/infosite",
         element: <InfoSite />,
       },
       {
