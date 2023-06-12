@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import sweden from "../assets/sweden.png";
 import textLogo from "../assets/Earth-Hero-Text.svg"
 import { useIsLoggedIn } from "../redux/isLoggedIn";
-import NavBar from "./navbar";
+import NavBar from "../components/NavBar";
 import { HiMenu } from "react-icons/hi";
 import Modal from "../components/Modal";
 
@@ -34,23 +34,3 @@ export default function Root() {
         </div>
     )
 }
-
-/* Hamburger meny (kolla instruktioner för användande i Modal.jsx (för state och setState parametrarna) + Lägga till iconer framför texten i knapparna(react-icons?)).
-   Sen bara att koppla till hamburger knappen samtlänka knapparna i menyn til respektive sida:
-    <Modal state={} setState={}>
-        <ul className='flex flex-col w-3/4 mx-auto my-[25vh] h-fit'>
-            <li key={1} className="bg-sky-300 hover:bg-sky-400 active:bg-sky-400 first:rounded-t-2xl last:rounded-b-2xl -mt-1 border border-EHGreen overflow-hidden">
-                <button className="block w-full py-2">Mitt konto</button>
-            </li>
-            <li key={2} className="bg-sky-300 hover:bg-sky-400 active:bg-sky-400 first:rounded-t-2xl last:rounded-b-2xl -mt-1 border border-EHGreen overflow-hidden">
-                <button className="block w-full py-2">Inställningar</button>
-            </li>
-            <li key={3} className="bg-sky-300 hover:bg-sky-400 active:bg-sky-400 first:rounded-t-2xl last:rounded-b-2xl -mt-1 border border-EHGreen overflow-hidden">
-                <button className="block w-full py-2">Hero Poäng</button>
-            </li>
-            <li key={4} className="bg-sky-300 hover:bg-sky-400 active:bg-sky-400 first:rounded-t-2xl last:rounded-b-2xl -mt-1 border border-EHGreen overflow-hidden">
-                <button className="block w-full py-2">Logga ut</button>
-            </li>
-        </ul>
-    </modal>
-*/
