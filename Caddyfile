@@ -1,8 +1,3 @@
 earth-hero.grinton.dev {
-  reverse_proxy / http://65.108.240.247 {
-    header_upstream Host {host}
-    header_upstream X-Real-IP {remote}
-    header_upstream X-Forwarded-For {remote}
-    header_upstream X-Forwarded-Proto {scheme}
-  }
+  reverse_proxy localhost:8080
 }
