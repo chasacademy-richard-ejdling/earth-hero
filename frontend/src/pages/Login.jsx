@@ -1,11 +1,7 @@
 import sweden from "../assets/sweden.png";
 import logo from "../assets/logo.svg";
 import { setIsLoggedIn, useIsLoggedIn } from "../redux/isLoggedIn";
-<<<<<<< HEAD
-import { useState } from "react";
-=======
 import { useState, useRef } from "react";
->>>>>>> development
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -16,7 +12,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const token = useRef('')
+  const token = useRef("");
 
   /* function handleLogin() {
     setIsLoggedIn(true);
@@ -24,14 +20,10 @@ export default function Login() {
   } */
 
   function handleLogin() {
-<<<<<<< HEAD
-    setIsLoggedIn(true);
-    navigate("/user");
-=======
     const user = {
       username: username,
       password: password,
-    }
+    };
 
     fetch("http://localhost:7000/login", {
       method: "POST",
@@ -44,19 +36,18 @@ export default function Login() {
       body: JSON.stringify(user),
     })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         if (res.ok) {
           setIsLoggedIn(true);
           navigate("/user");
-          return res.text()
+          return res.text();
         }
-        
-      }).then(data => {
-        console.log(data)
-        token.current = data
-        console.log('token', token.current)
       })
->>>>>>> development
+      .then((data) => {
+        console.log(data);
+        token.current = data;
+        console.log("token", token.current);
+      });
   }
 
   return (
@@ -87,10 +78,6 @@ export default function Login() {
             type="text"
           />
         </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> development
         <a href="" className="underline">
           Glömt lösenord?
         </a>

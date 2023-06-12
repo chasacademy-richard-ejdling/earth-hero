@@ -17,14 +17,11 @@ import TeamStart from "./pages/team/TeamStart.jsx";
 import CreateTeam from "./pages/team/createTeam.jsx";
 import JoinTeam from "./pages/team/joinTeam.jsx";
 import TeamInfo from "./pages/team/teamInfo.jsx";
-<<<<<<< HEAD
-import Junks from "./pages/junks.jsx";
-=======
 import InfoPoints from "./pages/InfoPoints.jsx";
 import TeamHome from "./pages/team/TeamHome.jsx";
 import TeamPoints from "./pages/TeamPoints.jsx";
 import InfoSite from "./pages/InfoSite.jsx";
->>>>>>> development
+import Junks from "./pages/Junks.jsx";
 
 const router = createBrowserRouter([
   {
@@ -48,22 +45,6 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-<<<<<<< HEAD
-        path: "/user/team",
-        element: <Team />,
-      },
-      {
-        path: "/user/team/create",
-        element: <CreateTeam />,
-      },
-      {
-        path: "/user/team/join",
-        element: <JoinTeam />,
-      },
-      {
-        path: "/user/team/info",
-        element: <TeamInfo />,
-=======
         path: "/user/team-start",
         element: <TeamStart />,
       },
@@ -86,18 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/user/team/:teamName/points",
         element: <TeamPoints />,
->>>>>>> development
       },
       {
         path: "/user/points",
         element: <Points />,
-<<<<<<< HEAD
-      },
-      {
-        path: "/user/junks",
-        element: <Junks />,
-=======
->>>>>>> development
       },
       {
         path: "/user/info-points",
@@ -118,7 +91,11 @@ const router = createBrowserRouter([
       {
         path: "/user/settings/infosite",
         element: <InfoSite />,
-      }
+      },
+      {
+        path: "/user/settings/junks",
+        element: <Junks />,
+      },
     ],
   },
 ]);
