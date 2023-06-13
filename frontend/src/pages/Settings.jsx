@@ -18,7 +18,7 @@ const Settings = () => {
       <h1 className="text-3xl font-bold mb-8">Inställningar</h1>
       <div className="flex flex-col items-center w-3/5 flex-grow">
         <div className="w-full">
-          <Link to="/user/settings/info">
+          <Link to="/settings/info">
             <button
               className={`${
                 activeButtons.includes('page1') ? 'bg-green-300 text-white transform scale-105' : 'bg-gray-100'
@@ -48,7 +48,7 @@ const Settings = () => {
               Hantera prestanda automatisk
             </button>
           </Link>
-          <Link to="/user/settings/help">
+          <Link to="/settings/help">
             <button
               className={`${
                 activeButtons.includes('page4') ? 'bg-green-300 text-white transform scale-105' : 'bg-gray-100'

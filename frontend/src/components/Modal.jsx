@@ -34,8 +34,8 @@ export default function Modal({ state, setState, children, type, title }) {
                             {children}
                         </div> :
                         type === 'arrow' &&
-                            <div className="flex bg-white p-4 fixed top-0 right-0 z-20 h-screen w-screen">
-                                <div className='flex items-center justify-center gap-2 text-lg bg-gray-200 w-1/2 h-fit'>
+                            <div className="flex flex-col bg-white p-4 fixed top-0 right-0 z-20 h-screen w-screen">
+                                <div className='flex items-center justify-center gap-2 text-lg bg-EHGreen w-1/2 h-fit'>
                                     <button onClick={() => setState(false)}><img src={arrow} alt="back button" /></button>
                                     <p>{title}</p>
                                 </div>
