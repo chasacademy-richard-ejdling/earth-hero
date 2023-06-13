@@ -1,0 +1,3 @@
+earth-hero.grinton.dev {
+  reverse_proxy localhost:8080
+}
