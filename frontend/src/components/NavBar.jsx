@@ -6,6 +6,8 @@ import hamburgermeny from "../assets/hamburgermeny.svg";
 import Modal from "./Modal";
 import TeamPoints from "../pages/TeamPoints";
 import { Link } from "react-router-dom";
+import Settings from "../pages/Settings";
+import InfoPoints from "../pages/InfoPoints";
 
 export default function NavBar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
@@ -82,8 +84,12 @@ export default function NavBar() {
         </ul>
       </Modal>
       <Modal state={openAccount} setState={setOpenAccount} type='arrow' title='Mitt konto'></Modal>
-      <Modal state={openSettings} setState={setOpenSettings} type='arrow' title='Inställningar'></Modal>
-      <Modal state={openPointInfo} setState={setOpenPointInfo} type='arrow' title='Hero poäng'></Modal>
+      <Modal state={openSettings} setState={setOpenSettings} type='arrow' title='Inställningar'>
+        <Settings />
+      </Modal>
+      <Modal state={openPointInfo} setState={setOpenPointInfo} type='arrow' title='Hero poäng'>
+        <InfoPoints />
+      </Modal>
       <Modal state={openLogout} setState={setOpenLogout} type='cross' ></Modal>
     </>
   );
